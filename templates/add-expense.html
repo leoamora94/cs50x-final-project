@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add an Expense
+{% endblock %}
+
+
+{% block main %}
+<h1>Add Expense</h1>
+<br>
+<form action="/expense" method="post">
+    <div class="mb-3">
+        <label for="start"><b>Description:</b></label>
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="description" placeholder="Description" type="text" required>
+    </div>
+    <div class="mb-3">
+        <label for="start" title="Put a positive number here."><b>Value:</b></label>
+        <input title="Put a positive number here." autocomplete="off" autofocus class="form-control mx-auto w-auto" name="value" placeholder="Value ($)" type="number" required>
+    </div>
+    <div class="mb-3">
+        <label for="start"><b>Date:</b></label>
+        <input type="date" name="date" class="form-control mx-auto w-auto" required>
+    </div>
+    <div class="mb-3">
+        <label for="start"><b>Category:</b></label>
+        <select id="category" name="category" class="form-select mx-auto w-auto" onclick="sortlist('category')" required>
+            <option value="..." disabled selected></option>
+            <option value="Home">Home</option>
+            <option value="Subscriptions">Subscriptions</option>
+            <option value="Transport">Transport</option>
+            <option value="Leisure">Leisure</option>
+            <option value="Pet">Pet</option>
+            <option value="Clothes">Clothes</option>
+            <option value="Travels">Travels</option>
+            <option value="Taxes">Taxes</option>
+            <option value="Health">Health</option>
+            <option value="Market">Market</option>
+            <option value="Food">Food</option>
+            <option value="Education">Education</option>
+            <option value="Credit Card">Credit Card</option>
+            <option value="Others">Others</option>
+        </select>
+    </div>
+    <button class="btn btn-primary" type="submit">Add</button>
+</form>
+{%endblock %}

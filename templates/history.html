@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Description</th>
+            <th scope="col">Category</th>
+            <th scope="col">Date</th>
+            <th scope="col">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in database %}
+            <tr id="row{{ row.id }}">
+                <td>{{ row.description }}</td>
+                <td>{{ row.category }}</td>
+                <td>{{ row.date }}</td>
+                {% if row.type == 'expense' %}
+                    <td style="color: rgb(204, 39, 39);">{{ row.value | usd }}</td>
+                {% else %}
+                    <td>{{ row.value | usd }}</td>
+                {% endif %}
+                <td>
+                    <a class="btn btn-danger" href="{{ url_for('delete', transaction_id=row['id']) }}">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    <tfoot>
+        <tr>
+            <td></td>
+            <td></td>
+            <th scope="1">Total Amount:</td>
+            <th scope="1">{{ cash[0]['cash'] | usd }}</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tfoot>
+</table>
+{%endblock %}
