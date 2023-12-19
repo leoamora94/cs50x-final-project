@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends "layout.html" %}
 
 {% block title %}
@@ -18,3 +19,25 @@
 	{% endif %}
 </div>
 {%endblock %}
+=======
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+<div>
+	{% if session['user_id'] %}
+	<h1>WELCOME, {{ session['username'] }}</h1>
+	{% else %}
+	<h1>iMoney</h1>
+	<h5><i>An simple Expense Tracker for You!</i></h5>
+	<br><br>
+	<h6><i>Not logged yet? Make Log In or Register</i></h6>
+	<a type="button" class="btn btn-primary" href="/login">Login</a>
+	<a class="btn btn-primary" href="register_user">Register</a>
+	{% endif %}
+</div>
+{%endblock %}
+>>>>>>> 0db0c6166abf08ea6e6a4e7798b880dc2933653d
