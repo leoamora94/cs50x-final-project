@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {% extends "layout.html" %}
 
 {% block title %}
@@ -34,41 +33,4 @@
     </div>
     <button class="btn btn-primary" type="submit">Add</button>
 </form>
-=======
-{% extends "layout.html" %}
-
-{% block title %}
-    Add an Income
-{% endblock %}
-
-
-{% block main %}
-<h1>Add Income</h1>
-<br>
-<form action="/income" method="post">
-    <div class="mb-3">
-        <label for="start"><b>Description:</b></label>
-        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="description" placeholder="Description" type="text" required>
-    </div>
-    <div class="mb-3">
-        <label for="start"><b>Value:</b></label>
-        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="value" placeholder="Value ($)" type="number" required>
-    </div>
-    <div class="mb-3">
-        <label for="start"><b>Date:</b></label>
-        <input type="date" name="date" class="form-control mx-auto w-auto" required>
-    </div>
-    <div class="mb-3">
-        <label for="start"><b>Category:</b></label>
-        <select id="category" name="category" class="form-select mx-auto w-auto" onclick="sortlist('category')" required>
-            <option value="..." disabled selected></option>
-            <option value="Salary">Salary</option>
-            <option value="Investiment">Investiment</option>
-            <option value="Reward">Reward</option>
-            <option value="Others">Others</option>
-        </select>
-    </div>
-    <button class="btn btn-primary" type="submit">Add</button>
-</form>
->>>>>>> 0db0c6166abf08ea6e6a4e7798b880dc2933653d
 {%endblock %}
